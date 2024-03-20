@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Waves from "../components/Waves.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Portfolio Dev Hugocrown">
+  <main class="w-full pt-56">
+    <h1
+      class="absolute inset-0 text-[110px] text-[#bebebe62] min-[1385px]:text-[220px] font-extrabold italic h-fit -mt-4 -z-10"
+    >
+      BIENVENIDO
+    </h1>
+    <section
+      class="flex flex-col max-w-[1170px] h-[60%] items-center justify-center mx-auto"
+    >
+      <h1 class="text-[100px] font-extrabold">Hola, soy Hugo Corona</h1>
+      <div
+        class="flex flex-row w-full gap-1 items-center justify-center -mt-10"
+      >
+        <div class="w-[193px] h-[86px] rounded-2xl bg-black"></div>
+        <h1 class="text-[100px] font-extrabold">desarrollador full-</h1>
+      </div>
+      <h1 class="text-[100px] font-extrabold -mt-14">stack</h1>
+      <p
+        class="text-center max-w-[875px] font-semibold text-[22px] text-[#494949] -mt-4"
+      >
+        Comprometido con la mejora continua y la adaptación a nuevas
+        tecnologías. Listo para contribuir y resolver desafíos en entornos
+        tecnológicos diversos.
+      </p>
+      <div class="flex items-center justify-evenly gap-x-10 mt-4">
+        <button
+          class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#E8E9ED] hover:text-[#070A0B] transition-colors"
+        >
+          Descargar CV <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-file-cv"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
+              d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+            ></path><path d="M11 12.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0"
+            ></path><path d="M13 11l1.5 6l1.5 -6"></path></svg
+          ></button
+        >
+        <button
+          class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-transparent text-[#070A0B] border-2 border-[#070A0B] text-[22px] font-semibold rounded-[12px] hover:bg-[#070A0B] hover:text-[#E8E9ED] transition-colors"
+        >
+          Proyectos <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-bolt"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"></path></svg
+          ></button
+        >
+      </div>
+    </section>
+    <Waves />
+  </main>
+</Layout>
