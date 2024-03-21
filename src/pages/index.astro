@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Waves from "../components/Waves.astro";
 import Name from "../components/Name.astro";
 import Seal from "../components/Seal.astro";
+import { Image } from "astro:assets";
+import MyPhoto from "../assets/yo.jpg";
 ---
 
 <Layout title="Portfolio Dev Hugocrown">
@@ -29,9 +31,9 @@ import Seal from "../components/Seal.astro";
           <div
             class="w-[193px] h-[86px] rounded-2xl bg-black overflow-hidden saturate-0"
           >
-            <img
+            <Image
               class="object-cover object-center"
-              src="public/assets/yo.jpg"
+              src={MyPhoto}
               alt="Foto mia"
             />
           </div>
