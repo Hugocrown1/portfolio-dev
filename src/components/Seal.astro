@@ -1,0 +1,102 @@
+---
+import "../../public/circle.css";
+---
+
+<div id="circular-text" class="text-[22px] font-semibold">
+  GANGA MALANDRA INC &nbsp;
+</div>
+
+<script>
+  const angleToRadian = (angle) => {
+    return angle * (Math.PI / 180);
+  };
+
+  const radius = 70;
+  const diameter = radius * 2;
+
+  const circle = document.querySelector("#circular-text");
+  circle.style.width = `${diameter}px`;
+  circle.style.height = `${diameter}px`;
+
+  const text = circle.innerText;
+  const character = text.split("");
+  circle.innerText = null;
+
+  let angle = -90;
+
+  const deltaAngle = 360 / character.length;
+
+  character.forEach((char, index) => {
+    const charelement = document.createElement("span");
+    charelement.innerText = char;
+    const xpos = radius * Math.cos(angleToRadian(angle));
+    const ypos = radius * Math.sin(angleToRadian(angle));
+
+    const transform = `translate(${xpos}px, ${ypos}px)`;
+    const rotate = `rotate(${index * deltaAngle}deg)`;
+    charelement.style.transform = `${transform} ${rotate}`;
+
+    angle += deltaAngle;
+    circle.appendChild(charelement);
+  });
+</script>
+
+<!-- <div class="circle">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-crown"
+    ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+      d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z"></path></svg
+  >
+  <div class="text">
+    <p class="text-[15px] text-[#F3B342] font-semibold">GANGA MALANDRA INC</p>
+  </div>
+</div>
+
+<style>
+  .circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: anim 15s linear infinite;
+  }
+
+  @keyframes anim {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+</style>
+
+<script>
+  const text = document.querySelector(".text p");
+  text.innerHTML = text.innerText
+    .split("")
+    .map(
+      (char, i) =>
+        `<span class="span-text absolute left-[50%] font-[1.5em] origin-[0_100px] rotate " style="transform:rotate(${i * 8.3}deg)">${char}</span>`
+    )
+    .join("");
+</script> -->

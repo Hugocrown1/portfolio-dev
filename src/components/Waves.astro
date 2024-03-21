@@ -1,54 +1,56 @@
-<section class="w-full h-[40%]">
+<section class="ocean">
+  <div class="wave"></div>
   <div class="wave"></div>
 </section>
 
 <style>
-  .wave {
+  .ocean {
+    height: 11%;
     width: 100%;
-    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
     background: #121c75;
-    animation: wave 6s ease-in-out infinite;
   }
+
+  .wave {
+    background: url("/public/wave.svg") repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .wave:nth-of-type(2) {
+    top: -190px;
+    left: 100px;
+    animation:
+      wave 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+      swell 15s ease -1.25s infinite;
+    opacity: 0.5;
+  }
+
   @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+  @keyframes swell {
     0%,
     100% {
-      clip-path: polygon(
-        0 24%,
-        7% 13%,
-        15% 10%,
-        24% 12%,
-        32% 18%,
-        46% 37%,
-        55% 52%,
-        65% 61%,
-        73% 67%,
-        81% 67%,
-        89% 56%,
-        95% 47%,
-        100% 38%,
-        100% 100%,
-        0 100%
-      );
+      transform: translate3d(0, -25px, 0);
     }
-
     50% {
-      clip-path: polygon(
-        0 31%,
-        7% 48%,
-        16% 55%,
-        23% 58%,
-        39% 59%,
-        46% 54%,
-        54% 45%,
-        61% 36%,
-        73% 15%,
-        82% 9%,
-        89% 11%,
-        95% 15%,
-        100% 25%,
-        100% 100%,
-        0 100%
-      );
+      transform: translate3d(0, 5px, 0);
     }
+  }
+  .endWave {
+    display: none;
   }
 </style>
