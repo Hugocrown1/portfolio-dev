@@ -3,23 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import Waves from "../components/Waves.astro";
 import Name from "../components/Name.astro";
 import Seal from "../components/Seal.astro";
+import BorderedText from "../components/BorderedText.astro";
+
 import { Image } from "astro:assets";
 import MyPhoto from "../assets/yo.jpg";
 ---
 
 <Layout title="Portfolio Dev Hugocrown">
-  <main>
+  <main class="flex flex-col items-center justify-center w-full">
     <section
       id="home"
-      class="relative w-screen h-screen pt-32 overflow-hidden flex-col flex px-2"
+      class="relative w-full pt-32 overflow-hidden flex-col flex"
     >
-      <!-- <h1
-        class="absolute inset-0 text-[110px] text-[#bebebe62] min-[1385px]:text-[220px] font-extrabold italic h-fit -mt-4"
-      >
-        BIENVENIDO
-      </h1> -->
       <section
-        class="flex flex-col max-w-[1170px] h-[60%] items-center justify-center mx-auto"
+        class="flex flex-col max-w-[1170px] h-fit items-center justify-center mx-auto"
       >
         <div class="flex flex-row relative w-[1170px]">
           <h1 class="text-[100px] font-extrabold">Hola, soy</h1>
@@ -49,7 +46,7 @@ import MyPhoto from "../assets/yo.jpg";
         </p>
         <div class="flex items-center justify-evenly gap-x-10 mt-4">
           <button
-            class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#E8E9ED] hover:text-[#070A0B] transition-colors"
+            class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#E8E9ED] hover:text-[#070A0B] transition-colors"
           >
             Descargar CV <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +67,7 @@ import MyPhoto from "../assets/yo.jpg";
             ></button
           >
           <button
-            class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-transparent text-[#070A0B] border-2 border-[#070A0B] text-[22px] font-semibold rounded-[12px] hover:bg-[#070A0B] hover:text-[#E8E9ED] transition-colors"
+            class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#E8E9ED] text-[#070A0B] border-2 border-[#070A0B] text-[22px] font-semibold rounded-[12px] hover:bg-[#070A0B] hover:text-[#E8E9ED] transition-colors"
           >
             Proyectos <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +87,12 @@ import MyPhoto from "../assets/yo.jpg";
         </div>
       </section>
       <Waves />
-      <Seal />
+    </section>
+    <section
+      id="sobre-mi"
+      class="w-full overflow-hidden pt-32 flex-col flex bg-[#121C75]"
+    >
+      <BorderedText>SOBRE MÍ</BorderedText>
     </section>
   </main>
 </Layout>

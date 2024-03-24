@@ -1,13 +1,13 @@
-<section class="ocean">
+<section class="ocean -z-10 mt-72">
   <div class="wave"></div>
   <div class="wave"></div>
 </section>
 
 <style>
   .ocean {
-    height: 11%;
+    height: 20%;
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
 
@@ -17,7 +17,7 @@
   .wave {
     background: url("/public/wave.svg") repeat-x;
     position: absolute;
-    top: -198px;
+    top: -160px;
     width: 6400px;
     height: 198px;
     animation: wave 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
@@ -26,7 +26,7 @@
 
   .wave:nth-of-type(2) {
     top: -190px;
-    left: 100px;
+
     animation:
       wave 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
       swell 15s ease -1.25s infinite;
