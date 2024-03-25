@@ -7,6 +7,7 @@ import BorderedText from "../components/BorderedText.astro";
 
 import { Image } from "astro:assets";
 import MyPhoto from "../assets/yo.jpg";
+import MyCard from "../components/MyCard.astro";
 ---
 
 <Layout title="Portfolio Dev Hugocrown">
@@ -15,7 +16,7 @@ import MyPhoto from "../assets/yo.jpg";
       id="home"
       class="relative w-full pt-32 overflow-hidden flex-col flex"
     >
-      <section
+      <div
         class="flex flex-col max-w-[1170px] h-fit items-center justify-center mx-auto"
       >
         <div class="flex flex-row relative w-[1170px]">
@@ -85,14 +86,59 @@ import MyPhoto from "../assets/yo.jpg";
             ></button
           >
         </div>
-      </section>
+      </div>
       <Waves />
     </section>
-    <section
-      id="sobre-mi"
-      class="w-full overflow-hidden pt-32 flex-col flex bg-[#121C75]"
-    >
+    <section class="w-full py-32 flex-col flex bg-[#121C75]">
       <BorderedText>SOBRE MÍ</BorderedText>
+      <div
+        id="sobre-mi"
+        class="flex flex-row max-w-[1170px] h-fit items-center justify-evenly mx-auto gap-x-[50px]"
+      >
+        <MyCard />
+        <div class="bio flex flex-col w-[425px]">
+          <p class="text-white text-[16px]">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit eu, vulputate
+            id ridiculus ante dictumst integer tristique justo, laoreet tortor
+            penatibus est urna porttitor diam. Sociosqu natoque ultricies
+            dapibus rutrum suscipit luctus non, litora eleifend dis aliquam
+            curae velit convallis facilisis, nostra quam penatibus nam tincidunt
+            tempor. Elementum sollicitudin quam non quisque sapien, hendrerit
+            bibendum eros metus euismod feugiat, hac rutrum at eget.
+          </p>
+          <br />
+          <p class="text-white text-[16px]">
+            Cras scelerisque a lacus ante sollicitudin primis congue dis tellus
+            cum nisl, netus pretium gravida facilisis vestibulum euismod
+            sagittis metus dignissim arcu, torquent vitae blandit pulvinar
+            aliquet proin iaculis dictum diam ornare. Nibh orci habitant cum
+            tincidunt egestas himenaeos luctus varius, bibendum pellentesque dis
+            fusce taciti congue magna, curabitur cursus commodo conubia class
+            mus feugiat. Ligula sagittis nascetur vitae feugiat himenaeos tellus
+            risus, cubilia quam et accumsan tortor posuere id consequat, eget
+            nostra tempus laoreet ultrices sociosqu.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
+
+<style>
+  .bio {
+    animation: fade-in-text auto both;
+    animation-timeline: view();
+    animation-range: entry 40% cover 60%;
+  }
+
+  @keyframes fade-in-text {
+    from {
+      transform: translate(0px, 200px);
+
+      box-shadow: 0;
+    }
+    to {
+      transform: translate(0);
+    }
+  }
+</style>

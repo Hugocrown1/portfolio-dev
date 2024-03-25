@@ -1,5 +1,5 @@
 <h1
-  class="text-[110px] w-fit text-[#bebebe62] min-[1385px]:text-[220px] font-extrabold italic h-fit -mt-4 bordered"
+  class="text-[110px] w-fit text-[#bebebe62] min-[1385px]:text-[220px] font-extrabold italic h-fit bordered m-0"
 >
   <slot />
 </h1>
@@ -7,10 +7,27 @@
 <style>
   .bordered {
     color: #121c75;
+
     text-shadow:
       -1px -1px 0 #e8e9ed,
       1px -1px 0 #e8e9ed,
       -1px 1px 0 #e8e9ed,
       1px 1px 0 #e8e9ed;
+
+    animation: show-title auto linear;
+
+    animation-timeline: view();
+    animation-range: entry 10% cover 50%;
+  }
+
+  @keyframes show-title {
+    from {
+      transform: translate(-1000px);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0px);
+      opacity: 1;
+    }
   }
 </style>

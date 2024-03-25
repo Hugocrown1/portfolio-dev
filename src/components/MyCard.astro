@@ -1,0 +1,41 @@
+---
+import Image from "astro/components/Image.astro";
+import MyPhoto from "../assets/crisi.PNG";
+---
+
+<article class="w-[394px] h-[662px] bg-[#172798] p-[20px]">
+  <div class="w-full h-[543px]">
+    <Image
+      class="saturate-0 object-cover object-center h-full"
+      src={MyPhoto}
+      alt="Mi foto"
+    />
+  </div>
+  <div
+    class="flex flex-col w-full text-[20px] italic text-white text-right mt-2"
+  >
+    <span class="font-light">Desarrollador full-stack</span>
+    <span class="font-extrabold">Hugo Alejandro Corona Ruvalcaba</span>
+  </div>
+</article>
+
+<style>
+  article {
+    animation: fade-in auto both;
+    animation-timeline: view();
+    animation-range: entry 40% cover 60%;
+  }
+
+  @keyframes fade-in {
+    from {
+      transform: translate(0px, 200px);
+
+      box-shadow: 0;
+    }
+    to {
+      transform: translate(0);
+
+      box-shadow: -19px 16px 0px 0px rgba(16, 34, 195, 1);
+    }
+  }
+</style>
