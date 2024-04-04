@@ -1,0 +1,127 @@
+---
+import BorderedText from "./BorderedText.astro";
+import MyCard from "./MyCard.astro";
+---
+
+<section id="sobre-mi" class="w-full py-32 flex-col flex bg-[#121C75]">
+  <BorderedText>SOBRE MÍ</BorderedText>
+  <div
+    class="flex flex-col max-w-[1170px] h-fit items-center justify-evenly mx-auto"
+  >
+    <div class="flex flex-row w-full gap-x-[50px] items-center mb-12">
+      <MyCard />
+      <div class="bio flex flex-col w-[425px]">
+        <p class="text-white text-[16px]">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit eu, vulputate
+          id ridiculus ante dictumst integer tristique justo, laoreet tortor
+          penatibus est urna porttitor diam. Sociosqu natoque ultricies dapibus
+          rutrum suscipit luctus non, litora eleifend dis aliquam curae velit
+          convallis facilisis,
+        </p>
+        <p class="text-white text-[16px]">
+          Cras scelerisque a lacus ante sollicitudin primis congue dis tellus
+          cum nisl, netus pretium gravida facilisis vestibulum euismod sagittis
+          metus dignissim arcu, torquent vitae blandit pulvinar aliquet proin
+          iaculis dictum diam ornare. Nibh orci habitant cum tincidunt egestas
+          himenaeos luctus varius, bibendum pellentesque dis fusce taciti congue
+          magna, curabitur cursus commodo conubia class mus feugiat. Ligula
+          sagittis nascetur vitae feugiat himenaeos tellus risus, cubilia quam
+          et accumsan tortor posuere id consequat, eget nostra tempus laoreet
+          ultrices sociosqu.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col w-full py-8 text-white text-[16px]">
+      <h3 class="font-semibold text-4xl mb-2">INFORMACIÓN PERSONAL</h3>
+      <div class="flex justify-between w-full py-2 border-t-2 border-white">
+        <strong>Nombre</strong>
+        <span>Hugo Alejandro Corona Ruvalcaba</span>
+      </div>
+      <div class="flex justify-between w-full py-2 border-t-2 border-white">
+        <strong>Edad</strong>
+        <span id="age"></span>
+      </div>
+      <div class="flex justify-between w-full py-2 border-t-2 border-white">
+        <strong>Ubicación</strong>
+        <span>México, Ensenada, Baja California</span>
+      </div>
+      <div class="flex justify-between w-full py-2 border-y-2 border-white">
+        <strong>Idiomas</strong>
+        <span>Español nativo / Inglés B2</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-full py-8 text-white text-[16px]">
+      <h3 class="font-semibold text-4xl mb-2">ESTUDIOS</h3>
+      <div
+        class="flex items-center justify-between w-full py-2 border-t-2 border-white"
+      >
+        <div class="flex flex-col">
+          <strong>Ingenieria en Sistemas Computacionales</strong><span
+            >Instituto Tecnológico de Ensenada</span
+          >
+        </div>
+        <span>2019 - 2024</span>
+      </div>
+
+      <div
+        class="flex items-center justify-between w-full py-2 border-y-2 border-white"
+      >
+        <div class="flex flex-col">
+          <strong>Curso Full Stack Open</strong><span
+            >Universidad de Helsinki</span
+          >
+        </div>
+        <span>2023 - 2023</span>
+      </div>
+    </div>
+    <div class="flex flex-col w-full py-8 text-white text-[16px]">
+      <h3 class="font-semibold text-4xl mb-2">EXPERIENCIA</h3>
+      <div
+        class="flex items-center justify-between w-full py-2 border-y-2 border-white"
+      >
+        <div class="flex flex-col">
+          <strong>Desarrollador Full Stack</strong><span
+            >Punta Banda Plus (Residencia profesional)</span
+          >
+        </div>
+        <span>2023 - 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bio {
+    animation: fade-in-text auto both;
+    animation-timeline: view();
+    animation-range: entry 40% cover 60%;
+  }
+
+  @keyframes fade-in-text {
+    from {
+      transform: translate(0px, 200px);
+
+      box-shadow: 0;
+    }
+    to {
+      transform: translate(0);
+    }
+  }
+</style>
+
+<script>
+  function calculateAge(dateOfBirth) {
+    const dob = new Date(dateOfBirth);
+    const today = new Date();
+    let age = today.getFullYear() - dob.getFullYear();
+    const month = today.getMonth() - dob.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) {
+      age--;
+    }
+    return age + " Años";
+  }
+
+  const dateOfBirth = "1999-11-09";
+
+  document.getElementById("age").textContent = calculateAge(dateOfBirth);
+</script>
