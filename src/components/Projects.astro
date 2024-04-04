@@ -1,0 +1,45 @@
+---
+import BorderedText from "./BorderedText.astro";
+import { Image } from "astro:assets";
+import PbHome from "../assets/pbplus-mockup.png";
+
+const PROJECTS = [
+  {
+    title: "PB Plus - Web Application",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit eu, vulputate id ridiculus ante dictumst integer tristique justo, laoreet tortor penatibus est urna porttitor diam. Sociosqu natoque ultricies dapibus rutrum suscipit luctus non, litora eleifend dis aliquam curae velit convallis facilisis,",
+    link: "#",
+    github: "#",
+    image: PbHome,
+    tags: ["Next.js", "Tailwind", "MongoDB"],
+  },
+];
+---
+
+<section id="projects" class="w-full py-32 flex-col flex bg-[#121C75]">
+  <BorderedText>PROYECTOS</BorderedText>
+  <div class="flex flex-col max-w-[1170px] h-fit items-center mx-auto mt-8">
+    {
+      PROJECTS.map(({ title, description, tags, image }) => (
+        <article class="flex flex-row w-full text-white gap-x-6">
+          <div class="flex flex-col">
+            <h3 class="text-[32px] font-bold">{title}</h3>
+            <ul>
+              {tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+            <p class="text-[#ffffffc0]">{description}</p>
+          </div>
+          <Image
+            loading="lazy"
+            decoding="async"
+            src={image}
+            alt="project photo"
+            class="w-[656px] h-[334px] rounded-xl border-[1px] border-white"
+          />
+        </article>
+      ))
+    }
+  </div>
+</section>
