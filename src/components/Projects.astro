@@ -2,7 +2,33 @@
 import BorderedText from "./BorderedText.astro";
 import { Image } from "astro:assets";
 import PbHome from "../assets/pbplus-mockup.png";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import MongoDB from "./icons/MongoDB.astro";
+import AWS from "./icons/AWS.astro";
 
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#00401B] text-white",
+    icon: MongoDB,
+  },
+  AWS: {
+    name: "AWS",
+    class: "bg-[#EAEAEA] text-black",
+    icon: AWS,
+  },
+};
 const PROJECTS = [
   {
     title: "PB Plus - Web Application",
@@ -11,25 +37,33 @@ const PROJECTS = [
     link: "#",
     github: "#",
     image: PbHome,
-    tags: ["Next.js", "Tailwind", "MongoDB"],
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGODB, TAGS.AWS],
   },
 ];
 ---
 
-<section id="projects" class="w-full py-32 flex-col flex bg-[#121C75]">
+<section id="projects" class="w-full py-20 flex-col flex bg-[#080D38]">
   <BorderedText>PROYECTOS</BorderedText>
   <div class="flex flex-col max-w-[1170px] h-fit items-center mx-auto mt-8">
     {
       PROJECTS.map(({ title, description, tags, image }) => (
-        <article class="flex flex-row w-full text-white gap-x-6">
-          <div class="flex flex-col">
-            <h3 class="text-[32px] font-bold">{title}</h3>
-            <ul>
+        <article class=" flex flex-row w-full text-white gap-x-6 ">
+          <div class="relative flex flex-col ">
+            <div class="absolute triangle" />
+            <h3 class="text-[32px] text-[#52CCFF] font-bold z-10">{title}</h3>
+            <ul class="flex flex-row gap-x-2 z-10">
               {tags.map((tag) => (
-                <li>{tag}</li>
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
               ))}
             </ul>
-            <p class="text-[#ffffffc0]">{description}</p>
+            <p class="text-[#ffffffc0] text-pretty mt-4">{description}</p>
           </div>
           <Image
             loading="lazy"
@@ -43,3 +77,16 @@ const PROJECTS = [
     }
   </div>
 </section>
+
+<style>
+  .triangle {
+    width: 210px;
+    height: 120px;
+    clip-path: polygon(49% 74%, 0 32%, 100% 12%);
+    rotate: -5deg;
+    left: -50px;
+    top: -30px;
+
+    background-color: blue;
+  }
+</style>
