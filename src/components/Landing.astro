@@ -3,6 +3,8 @@ import Waves from "./Waves.astro";
 import Name from "./Name.astro";
 import { Image } from "astro:assets";
 import MyPhoto from "../assets/yo.jpg";
+import LinkedIn from "./icons/LinkedIn.astro";
+import GitHub from "./icons/GitHub.astro";
 ---
 
 <section id="home" class="relative w-full pt-32 overflow-hidden flex-col flex">
@@ -36,44 +38,21 @@ import MyPhoto from "../assets/yo.jpg";
       > listo para contribuir y resolver desafíos en entornos tecnológicos diversos.
     </p>
     <div class="flex items-center justify-evenly gap-x-10 mt-4">
-      <button
-        class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#E8E9ED] hover:text-[#070A0B] transition-colors"
+      <a
+        href="https://www.linkedin.com/in/hugocrown/"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#070a0be0] transition-colors"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-file-cv"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-            d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
-            d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
-          ></path><path d="M11 12.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0"
-          ></path><path d="M13 11l1.5 6l1.5 -6"></path></svg
-        >Descargar CV</button
+        <LinkedIn />LinkedIn</a
       >
-      <button
-        class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#E8E9ED] text-[#070A0B] border-2 border-[#070A0B] text-[22px] font-semibold rounded-[12px] hover:bg-[#070A0B] hover:text-[#E8E9ED] transition-colors"
+      <a
+        href="https://github.com/Hugocrown1"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#E8E9ED] text-[#070A0B] border-2 border-[#070A0B] text-[22px] font-semibold rounded-[12px] hover:bg-[#e0e0e0] transition-colors"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-bolt"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-            d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"></path></svg
-        >Proyectos</button
+        <GitHub /> GitHub</a
       >
     </div>
   </div>
