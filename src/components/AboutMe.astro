@@ -1,6 +1,7 @@
 ---
 import BorderedText from "./BorderedText.astro";
 import MyCard from "./MyCard.astro";
+import CVIcon from "./icons/CVIcon.astro";
 ---
 
 <section id="sobre-mi" class="w-full pt-32 flex-col flex bg-[#080D38]">
@@ -8,27 +9,33 @@ import MyCard from "./MyCard.astro";
   <div
     class="flex flex-col max-w-[1170px] h-fit items-center justify-evenly mx-auto"
   >
-    <div class="flex flex-row w-full gap-x-[50px] items-center mb-12">
+    <div class="flex flex-row w-full gap-x-[50px] items-center mb-14">
       <MyCard />
-      <div class="bio flex flex-col w-[425px]">
-        <p class="text-white text-[16px]">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit eu, vulputate
-          id ridiculus ante dictumst integer tristique justo, laoreet tortor
-          penatibus est urna porttitor diam. Sociosqu natoque ultricies dapibus
-          rutrum suscipit luctus non, litora eleifend dis aliquam curae velit
-          convallis facilisis,
-        </p>
-        <p class="text-white text-[16px]">
-          Cras scelerisque a lacus ante sollicitudin primis congue dis tellus
-          cum nisl, netus pretium gravida facilisis vestibulum euismod sagittis
-          metus dignissim arcu, torquent vitae blandit pulvinar aliquet proin
-          iaculis dictum diam ornare. Nibh orci habitant cum tincidunt egestas
-          himenaeos luctus varius, bibendum pellentesque dis fusce taciti congue
-          magna, curabitur cursus commodo conubia class mus feugiat. Ligula
-          sagittis nascetur vitae feugiat himenaeos tellus risus, cubilia quam
-          et accumsan tortor posuere id consequat, eget nostra tempus laoreet
-          ultrices sociosqu.
-        </p>
+      <div class="bio flex flex-col justify-end gap-y-12 w-[425px] h-full">
+        <div>
+          <p class="text-white text-[16px]">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit eu, vulputate
+            id ridiculus ante dictumst integer tristique justo, laoreet tortor
+            penatibus est urna porttitor diam. Sociosqu natoque ultricies
+            dapibus rutrum suscipit luctus non, litora eleifend dis aliquam
+            curae velit convallis facilisis,
+          </p>
+          <p class="text-white text-[16px] mt-4">
+            Cras scelerisque a lacus ante sollicitudin primis congue dis tellus
+            cum nisl, netus pretium gravida facilisis vestibulum euismod
+            sagittis metus dignissim arcu, torquent vitae blandit pulvinar
+            aliquet proin iaculis dictum diam ornare. Nibh orci habitant cum
+            tincidunt egestas himenaeos luctus varius, bibendum pellentesque dis
+            fusce taciti congue magna, curabitur cursus commodo conubia class
+            mus feugiat. Ligula sagittis nascetur vitae feugiat himenaeos tellus
+            risus, cubilia quam et accumsan tortor posuere id consequat, eget
+            nostra tempus laoreet ultrices sociosqu.
+          </p>
+        </div>
+        <button
+          class="flex items-center justify-center gap-x-2 min-w-[218px] w-fit min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#ffffff] hover:text-[#000000] transition-colors"
+          ><CVIcon />Descargar CV
+        </button>
       </div>
     </div>
     <div class="flex flex-col w-full py-8 text-white text-[16px]">
