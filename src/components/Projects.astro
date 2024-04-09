@@ -2,12 +2,15 @@
 import BorderedText from "./BorderedText.astro";
 import { Image } from "astro:assets";
 import PbHome from "../assets/pbplus-mockup.png";
+import SIE from "../assets/sie.webp";
+import Rocket from "../assets/rocket.webp";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import MongoDB from "./icons/MongoDB.astro";
 import AWS from "./icons/AWS.astro";
 import LinkIcon from "./icons/LinkIcon.astro";
 import GitHub from "./icons/GitHub.astro";
+import MySQL from "./icons/MySQL.astro";
 
 import Link from "./Link.astro";
 
@@ -29,19 +32,42 @@ const TAGS = {
   },
   AWS: {
     name: "AWS",
-    class: "bg-[#EAEAEA] text-black",
+    class: "bg-[#dadada] text-black",
     icon: AWS,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#dadada] text-black",
+    icon: MySQL,
   },
 };
 const PROJECTS = [
   {
-    title: "PB Plus - Web Application",
+    title: "PB Plus - Aplicación web",
     description:
       "Aplicación web creada desde cero que facilita la gestión, soporte y comunicación entre los departamentos de la empresa, utilizando bases de datos y perfiles de usuario. Cuenta con un sistema de cotización de servicios que genera un PDF para el cliente y el administrador.",
-    link: "#",
-    github: "#",
+    link: "",
+    github: "",
     image: PbHome,
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGODB, TAGS.AWS],
+  },
+  {
+    title: "Dashboard de administrador para e-commerce",
+    description:
+      "Panel de administración creado desde cero para un e-commerce, incluyendo protección de endpoints y autenticación de usuarios. Se utiliza MongoDB para gestionar la base de datos, ofreciendo una estructura dealmacenamiento ágil y escalable",
+    link: "",
+    github: "https://github.com/Hugocrown1/rocket-admin",
+    image: Rocket,
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGODB, TAGS.AWS],
+  },
+  {
+    title: "ITE - Sistema de integración escolar",
+    description:
+      "Propuesta en equipo para un sistema de integración escolar en nuestra universidad, el cual gestiona las cuentas educativas de los estudiantes, profesores y personal administrativo.",
+    link: "",
+    github: "https://github.com/jneblina/Proyecto-SIE",
+    image: SIE,
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MYSQL],
   },
 ];
 ---
@@ -52,17 +78,17 @@ const PROJECTS = [
     class="flex flex-col max-w-[1170px] h-fit items-center mx-auto mt-8 gap-y-16"
   >
     {
-      PROJECTS.map(({ title, description, tags, image }) => (
+      PROJECTS.map(({ title, description, tags, image, github, link }) => (
         <article class=" flex flex-row w-full text-white gap-x-6 ">
           <div class=" flex flex-col justify-between">
             <div class="flex flex-col ">
               <header class="flex relative">
                 <div class="absolute triangle z-0" />
-                <h3 class="text-[32px] text-[#52CCFF] font-bold z-20">
+                <h3 class="text-[32px] text-[#52CCFF] font-bold z-20 leading-tight text-pretty">
                   {title}
                 </h3>
               </header>
-              <ul class="flex flex-row gap-x-2 z-10">
+              <ul class="flex flex-row gap-x-2 z-10 mt-2">
                 {tags.map((tag) => (
                   <li>
                     <span
@@ -77,12 +103,16 @@ const PROJECTS = [
               <p class="text-[#ffffffc0] text-pretty mt-4">{description}</p>
             </div>
             <footer class="flex flex-row gap-x-2">
-              <Link href="#">
-                <LinkIcon /> Visitar
-              </Link>
-              <Link href="#">
-                <GitHub /> Código
-              </Link>
+              {link && (
+                <Link href={link}>
+                  <LinkIcon /> Visitar
+                </Link>
+              )}
+              {github && (
+                <Link href={github}>
+                  <GitHub /> Código
+                </Link>
+              )}
             </footer>
           </div>
           <Image
@@ -102,7 +132,7 @@ const PROJECTS = [
   .triangle {
     width: 210px;
     height: 120px;
-    clip-path: polygon(49% 74%, 0 32%, 100% 12%);
+    clip-path: polygon(49% 70%, 0 32%, 100% 12%);
     rotate: -5deg;
     left: -50px;
     top: -30px;
