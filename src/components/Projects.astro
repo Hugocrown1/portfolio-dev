@@ -1,9 +1,9 @@
 ---
 import BorderedText from "./BorderedText.astro";
 import { Image } from "astro:assets";
-import PbHome from "../assets/pbplus-mockup.png";
-import SIE from "../assets/sie.webp";
-import Rocket from "../assets/rocket.webp";
+import PbHome from "../assets/pbhome.webp";
+import SIE from "../assets/sie-re.webp";
+import Rocket from "../assets/rocket-cat.webp";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import MongoDB from "./icons/MongoDB.astro";
@@ -75,13 +75,13 @@ const PROJECTS = [
 <section id="projects" class="w-full py-20 flex-col flex bg-[#080D38]">
   <BorderedText>PROYECTOS</BorderedText>
   <div
-    class="flex flex-col max-w-[1170px] h-fit items-center mx-auto mt-8 gap-y-16"
+    class="flex flex-col max-w-[1600px] h-fit items-center mx-auto mt-8 gap-y-20"
   >
     {
       PROJECTS.map(({ title, description, tags, image, github, link }) => (
-        <article class=" flex flex-row w-full text-white gap-x-6 ">
-          <div class=" flex flex-col justify-between">
-            <div class="flex flex-col ">
+        <article class="group flex flex-row w-full text-white gap-x-20 ">
+          <div class=" flex flex-col ">
+            <div class="flex flex-col mb-4">
               <header class="flex relative">
                 <div class="absolute triangle z-0" />
                 <h3 class="text-[32px] text-[#52CCFF] font-bold z-20 leading-tight text-pretty">
@@ -115,13 +115,16 @@ const PROJECTS = [
               )}
             </footer>
           </div>
-          <Image
-            loading="lazy"
-            decoding="async"
-            src={image}
-            alt="project photo"
-            class="w-[656px] h-[334px] rounded-xl border-[1px] border-white"
-          />
+          <div class="min-w-[1010px] aspect-video project-image  border-[1px] border-white overflow-hidden  ">
+            <Image
+              quality={100}
+              loading="lazy"
+              decoding="async"
+              src={image}
+              alt="project photo"
+              class="object-cover w-full object-center scale-105 group-hover:scale-100 transition-all duration-500"
+            />
+          </div>
         </article>
       ))
     }
@@ -129,6 +132,9 @@ const PROJECTS = [
 </section>
 
 <style>
+  .project-image {
+    box-shadow: -19px 16px 0px 0px rgba(16, 34, 195, 1);
+  }
   .triangle {
     width: 210px;
     height: 120px;
