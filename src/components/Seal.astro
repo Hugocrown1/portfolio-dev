@@ -3,6 +3,58 @@ import "../../public/circle.css";
 ---
 
 <div
+  class="text-[32px] text-[#F3B342] absolute z-20 translate-x-64 -translate-y-28"
+>
+  <svg width="190" height="190">
+    <path id="curve" d="M 28 95 A 67.5 67.5 0 1 1 28 97"> </path>
+    <text class="text">
+      <textPath href="#curve"> • CARPE DIEM • CARPE DIEM </textPath>
+    </text>
+    <svg x="45" y="45" width="135" height="135">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-crown"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z"></path></svg
+      >
+    </svg>
+  </svg>
+</div>
+
+<style>
+  .text {
+    fill: #f3b342;
+    font-weight: 500;
+    transform-origin: 50% 50%;
+    animation: rotate 10s linear infinite;
+  }
+
+  #curve {
+    fill: transparent;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<!-- <div
   class="absolute flex items-center justify-center z-10 text-[#F3B342] translate-x-80 -translate-y-14"
 >
   <svg
@@ -58,64 +110,4 @@ import "../../public/circle.css";
     angle += deltaAngle;
     circle.appendChild(charelement);
   });
-</script>
-
-<!-- <div class="circle">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="icon icon-tabler icons-tabler-outline icon-tabler-crown"
-    ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-      d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z"></path></svg
-  >
-  <div class="text">
-    <p class="text-[15px] text-[#F3B342] font-semibold">GANGA MALANDRA INC</p>
-  </div>
-</div>
-
-<style>
-  .circle {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .text {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    animation: anim 15s linear infinite;
-  }
-
-  @keyframes anim {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-</style>
-
-<script>
-  const text = document.querySelector(".text p");
-  text.innerHTML = text.innerText
-    .split("")
-    .map(
-      (char, i) =>
-        `<span class="span-text absolute left-[50%] font-[1.5em] origin-[0_100px] rotate " style="transform:rotate(${i * 8.3}deg)">${char}</span>`
-    )
-    .join("");
 </script> -->
