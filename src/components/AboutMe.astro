@@ -2,35 +2,108 @@
 import BorderedText from "./BorderedText.astro";
 import MyCard from "./MyCard.astro";
 import CVIcon from "./icons/CVIcon.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import NextJS from "./icons/NextJS.astro";
+import React from "./icons/React.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import NodeJS from "./icons/NodeJS.astro";
+import AWS from "./icons/AWS.astro";
+import Git from "./icons/Git.astro";
+import MongoDB from "./icons/MongoDB.astro";
+import MySQL from "./icons/MySQL.astro";
+import Redux from "./icons/Redux.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+
+const SKILLS = [
+  {
+    name: "JavaScript",
+    icon: JavaScript,
+  },
+  {
+    name: "React",
+    icon: React,
+  },
+  {
+    name: "Next.js",
+    icon: NextJS,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: Tailwind,
+  },
+
+  {
+    name: "Node.js",
+    icon: NodeJS,
+  },
+  {
+    name: "AWS",
+    icon: AWS,
+  },
+  {
+    name: "Git",
+    icon: Git,
+  },
+  {
+    name: "MongoDB",
+    icon: MongoDB,
+  },
+  {
+    name: "mySQL",
+    icon: MySQL,
+  },
+];
 ---
 
 <section id="sobre-mi" class="w-full pt-32 flex-col flex bg-[#00004d]">
   <BorderedText>SOBRE MÍ</BorderedText>
-  <div
-    class="flex flex-col max-w-[1170px] h-fit items-center justify-evenly mx-auto"
-  >
-    <div class="flex flex-row w-full gap-x-[50px] items-center mb-14">
+  <div class="flex flex-col w-full max-w-[1050px] items-center mx-auto">
+    <div
+      class="flex flex-row w-full gap-x-[50px] items-center justify-evenly mb-14"
+    >
       <MyCard />
-      <div class="bio flex flex-col justify-end gap-y-12 w-[425px] h-full">
+      <div
+        class="bio flex flex-col justify-end gap-y-12 max-w-[615px] h-full text-pretty"
+      >
         <div>
           <p class="text-white text-[16px]">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit eu, vulputate
-            id ridiculus ante dictumst integer tristique justo, laoreet tortor
-            penatibus est urna porttitor diam. Sociosqu natoque ultricies
-            dapibus rutrum suscipit luctus non, litora eleifend dis aliquam
-            curae velit convallis facilisis,
+            Mi nombre es <span class="text-[#52CCFF]"
+              >Hugo Alejandro Corona Ruvalcaba</span
+            > y nací el 9 de noviembre de 1999 en <span class="text-[#52CCFF]"
+              >Ensenada, Baja California</span
+            >. Desde niño me apasiona el mundo de la tecnología y la
+            informática. La primera vez que programé fue en un curso de C en
+            Khan Academy y desde entonces he probado muchos lenguajes y
+            tecnologías diferentes.
           </p>
           <p class="text-white text-[16px] mt-4">
-            Cras scelerisque a lacus ante sollicitudin primis congue dis tellus
-            cum nisl, netus pretium gravida facilisis vestibulum euismod
-            sagittis metus dignissim arcu, torquent vitae blandit pulvinar
-            aliquet proin iaculis dictum diam ornare. Nibh orci habitant cum
-            tincidunt egestas himenaeos luctus varius, bibendum pellentesque dis
-            fusce taciti congue magna, curabitur cursus commodo conubia class
-            mus feugiat. Ligula sagittis nascetur vitae feugiat himenaeos tellus
-            risus, cubilia quam et accumsan tortor posuere id consequat, eget
-            nostra tempus laoreet ultrices sociosqu.
+            Mi objetivo es desarrollar las mejores soluciones web aplicando las
+            mejores prácticas y prestando atención al detalle tanto en el código
+            como en el diseño. Esta pasión se ve respaldada por mi firme
+            compromiso con el aprendizaje continuo. Estoy emocionado por seguir
+            explorando nuevas tecnologías y desafíos, y estoy comprometido a
+            seguir creciendo como profesional para ofrecer soluciones
+            innovadoras y efectivas en el mundo digital.
           </p>
+
+          <p class="text-white text-[16px] mt-4">
+            Algunas de mis habilidades son:
+          </p>
+          <ul class="flex flex-wrap gap-2 mt-2 text-sm">
+            {
+              SKILLS.map((skill) => (
+                <li>
+                  <span
+                    class={`text-white flex gap-x-2 items-center rounded-full bg-black/25 border-[1px] border-[#52CCFF] py-1 px-4`}
+                  >
+                    <skill.icon class="size-5" />
+
+                    {skill.name}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
         </div>
         <button
           class="flex items-center justify-center gap-x-2 min-w-[218px] w-fit min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#ffffff] hover:text-[#000000] transition-colors"
