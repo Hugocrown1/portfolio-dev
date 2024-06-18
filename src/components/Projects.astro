@@ -46,7 +46,7 @@ const PROJECTS = [
     title: "PB Plus - Aplicación web",
     description:
       "Aplicación web creada desde cero que facilita la gestión, soporte y comunicación entre los departamentos de la empresa, utilizando bases de datos y perfiles de usuario. Cuenta con un sistema de cotización de servicios que genera un PDF para el cliente y el administrador.",
-    link: "",
+    link: "https://pbplus.com.mx/",
     github: "",
     image: PbHome,
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGODB, TAGS.AWS],
@@ -72,7 +72,7 @@ const PROJECTS = [
 ];
 ---
 
-<section id="projects" class="w-full py-20 flex-col flex bg-[#00004d]">
+<section id="projects" class="w-full my-20 flex-col flex bg-[#00004d]">
   <BorderedText>PROYECTOS</BorderedText>
   <div
     class="flex flex-col max-w-[1600px] h-fit items-center mx-auto mt-8 gap-y-20"
@@ -104,12 +104,12 @@ const PROJECTS = [
             </div>
             <footer class="flex flex-row gap-x-2">
               {link && (
-                <Link href={link}>
+                <Link rel="noopener noreferrer" target="_blank" href={link}>
                   <LinkIcon /> Visitar
                 </Link>
               )}
               {github && (
-                <Link href={github}>
+                <Link rel="noopener noreferrer" target="_blank" href={github}>
                   <GitHub /> Código
                 </Link>
               )}
