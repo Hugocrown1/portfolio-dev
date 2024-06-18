@@ -13,6 +13,9 @@ import MongoDB from "./icons/MongoDB.astro";
 import MySQL from "./icons/MySQL.astro";
 import Redux from "./icons/Redux.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import Link from "./Link.astro";
+
+import CV from "../assets/CV-HugoCorona.pdf";
 
 const SKILLS = [
   {
@@ -55,7 +58,7 @@ const SKILLS = [
 ];
 ---
 
-<section id="sobre-mi" class="w-full pt-32 flex-col flex bg-[#00004d]">
+<section id="sobre-mi" class="w-full mt-32 flex-col flex bg-[#00004d]">
   <BorderedText>SOBRE MÍ</BorderedText>
   <div class="flex flex-col w-full max-w-[980px] items-center mx-auto">
     <div
@@ -101,10 +104,12 @@ const SKILLS = [
             }
           </ul>
         </div>
-        <button
+        <Link
+          href={CV}
+          download="CV-HugoCorona"
           class="flex items-center justify-center gap-x-2 min-w-[218px] w-fit min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#ffffff] hover:text-[#000000] transition-colors"
           ><CVIcon />Descargar CV
-        </button>
+        </Link>
       </div>
     </div>
     <div class="flex flex-col w-full py-8 text-white text-[16px]">
@@ -161,6 +166,16 @@ const SKILLS = [
           >
         </div>
         <span>2023 - 2024</span>
+      </div>
+      <div
+        class="flex items-center justify-between w-full py-2 border-b-2 border-white"
+      >
+        <div class="flex flex-col">
+          <strong>Soporte Técnico</strong><span
+            >Instituto Estatal Electoral de Baja California (IEEBC)</span
+          >
+        </div>
+        <span>2024 - 2024</span>
       </div>
     </div>
   </div>
