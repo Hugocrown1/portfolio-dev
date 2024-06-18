@@ -4,12 +4,13 @@ import WavesWhite from "./WavesWhite.astro";
 
 <footer
   id="footer"
-  class="relative w-full overflow-hidden flex-col flex bg-[#00004D]"
+  class="relative w-full overflow-hidden flex-col flex bg-[#00004D] h-full"
 >
   <WavesWhite />
-  <div class="flex flex-col items-baseline w-full h-56 bg-[#E8E9ED] pt-11">
+
+  <div class="flex flex-col items-baseline w-full bg-[#E8E9ED] pt-11 pb-6">
     <div
-      class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+      class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between border-t-[1px] border-gray-300 mt-4"
     >
       <span class="text-sm text-black sm:text-center"
         >© 2024 <a href="https://flowbite.com/" class="hover:underline"
@@ -20,16 +21,26 @@ import WavesWhite from "./WavesWhite.astro";
         class="flex flex-wrap items-center mt-3 text-sm font-medium text-black sm:mt-0"
       >
         <li>
-          <a href="#" class="hover:underline me-4 md:me-6">About</a>
+          <a
+            href="https://www.linkedin.com/in/hugocrown/"
+            rel="noopener noreferrer"
+            target="_blank"
+            class="hover:underline me-4 md:me-6">Linkedin</a
+          >
         </li>
         <li>
-          <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+          <a
+            href="https://github.com/Hugocrown1"
+            class="hover:underline me-4 md:me-6">Github</a
+          >
         </li>
         <li>
-          <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+          <a href="#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
         </li>
         <li>
-          <a href="#" class="hover:underline">Contact</a>
+          <a href="mailto:hugo.corona.r@gmail.com" class="hover:underline"
+            >Contacto</a
+          >
         </li>
       </ul>
     </div>
