@@ -58,11 +58,13 @@ const SKILLS = [
 ];
 ---
 
-<section id="sobre-mi" class="w-full mt-32 flex-col flex bg-[#00004d]">
+<section id="sobre-mi" class="w-full mt-32 flex-col flex bg-[#00004d] px-4">
   <BorderedText>SOBRE MÍ</BorderedText>
-  <div class="flex flex-col w-full max-w-[980px] items-center mx-auto">
+  <div
+    class="flex flex-col w-full max-w-[980px] items-center mx-auto mt-14 min-[980px]:mt-4"
+  >
     <div
-      class="flex flex-row w-full gap-x-[50px] items-center justify-evenly mb-14"
+      class="flex flex-col min-[980px]:flex-row w-full gap-x-[50px] gap-y-8 items-center justify-evenly mb-14"
     >
       <MyCard />
       <div

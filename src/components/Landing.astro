@@ -9,18 +9,26 @@ import GitHub from "./icons/GitHub.astro";
 
 <section
   id="home"
-  class="relative w-full pt-32 overflow-hidden flex-col flex bg-[#e8e9ed]"
+  class="relative w-full pt-36 min-[440px]:pt-32 overflow-hidden flex-col flex bg-[#e8e9ed] max-[440px]:px-2"
 >
   <div
-    class="flex flex-col max-w-[1170px] h-fit items-center justify-center mx-auto"
+    class="flex flex-col max-w-[1170px] items-center justify-center mx-auto max-[440px]:mb-18"
   >
-    <div class="flex flex-row relative w-[1170px]">
-      <h1 class="text-[100px] font-extrabold">Hola, soy</h1>
+    <div
+      class="flex flex-row relative w-[280px] min-[920px]:w-[900px] min-[1173px]:w-[1120px]"
+    >
+      <h1
+        class="text-[25px] min-[920px]:text-[80px] min-[1173px]:text-[100px] font-extrabold"
+      >
+        Hola, soy
+      </h1>
       <Name />
     </div>
-    <div class="flex flex-row w-full gap-1 items-center justify-center -mt-10">
-      <div
-        class="w-[193px] h-[86px] rounded-2xl bg-black overflow-hidden saturate-0"
+    <div
+      class="flex flex-row w-full gap-1 items-center justify-center -mt-2 min-[920px]:-mt-10"
+    >
+      <figure
+        class="w-[70px] min-[920px]:w-[153px] min-[1173px]:w-[193px] rounded-lg min-[920px]:rounded-2xl bg-black overflow-hidden saturate-0 aspect-[193/86]"
       >
         <Image
           decoding="async"
@@ -29,23 +37,33 @@ import GitHub from "./icons/GitHub.astro";
           src={MyPhoto}
           alt="Foto mia"
         />
-      </div>
-      <h1 class="text-[100px] font-extrabold">desarrollador full-</h1>
+      </figure>
+      <h1
+        class="text-[25px] min-[920px]:text-[80px] min-[1173px]:text-[100px] font-extrabold"
+      >
+        desarrollador full-
+      </h1>
     </div>
-    <h1 class="text-[100px] font-extrabold -mt-14">stack</h1>
+    <h1
+      class="text-[25px] min-[920px]:text-[80px] min-[1173px]:text-[100px] font-extrabold -mt-4 min-[920px]:-mt-14"
+    >
+      stack
+    </h1>
     <p
-      class="text-center max-w-[875px] font-semibold text-[22px] text-[#494949] -mt-4"
+      class="text-center max-w-[70ch] font-semibold text-sm min-[920px]:text-[22px] text-[#494949] min-[920px]:-mt-4"
     >
       +2 años de experiencia. <span class="text-[#121C75]"
         >Ingeniero en sistemas computacionales</span
       > listo para contribuir y resolver desafíos en entornos tecnológicos diversos.
     </p>
-    <div class="flex items-center justify-evenly gap-x-10 mt-4">
+    <div
+      class="flex flex-col min-[440px]:flex-row items-center justify-evenly gap-x-10 mt-4 gap-y-2 max-[440px]:w-full text-md min-[440px]:text-[22px]"
+    >
       <a
         href="https://www.linkedin.com/in/hugocrown/"
         rel="noopener noreferrer"
         target="_blank"
-        class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] text-[22px] font-semibold rounded-[12px] hover:bg-[#070a0be0] transition-colors"
+        class="flex items-center justify-center gap-x-2 max-[440px]:w-full min-w-[200px] min-[920px]:min-w-[218px] min-h-[50px] min-[920px]:min-h-[60px] bg-[#070A0B] border-2 border-[#070A0B] text-[#E8E9ED] font-semibold rounded-[12px] hover:bg-[#070a0be0] transition-colors"
       >
         <LinkedIn />LinkedIn</a
       >
@@ -53,7 +71,7 @@ import GitHub from "./icons/GitHub.astro";
         href="https://github.com/Hugocrown1"
         rel="noopener noreferrer"
         target="_blank"
-        class="flex items-center justify-center gap-x-2 min-w-[218px] min-h-[60px] bg-[#E8E9ED] text-[#070A0B] border-2 border-[#070A0B] text-[22px] font-semibold rounded-[12px] hover:bg-[#e0e0e0] transition-colors"
+        class="flex items-center justify-center gap-x-2 max-[440px]:w-full min-w-[200px] min-[920px]:min-w-[218px] min-h-[50px] min-[920px]:min-h-[60px] bg-[#E8E9ED] text-[#070A0B] border-2 border-[#070A0B] font-semibold rounded-[12px] hover:bg-[#e0e0e0] transition-colors"
       >
         <GitHub /> GitHub</a
       >

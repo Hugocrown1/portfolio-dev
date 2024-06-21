@@ -5,10 +5,10 @@ import Seal from "./Seal.astro";
 ---
 
 <article
-  class="relative min-w-[394px] h-[662px] bg-[#0c06ac] ml-[19px] p-[20px]"
+  class="relative flex flex-col min-[900px]:min-w-[394px] max-w-[600px] bg-[#0c06ac] ml-[19px] p-[20px] aspect-[394/662]"
 >
   <Seal />
-  <div class="w-full h-[543px]">
+  <div class="w-full h-full">
     <Image
       decoding="async"
       loading="lazy"
@@ -17,7 +17,9 @@ import Seal from "./Seal.astro";
       alt="Mi foto"
     />
   </div>
-  <div class="flex flex-col w-full text-[20px] text-white text-right mt-2">
+  <div
+    class="flex flex-col min-h-[60px] w-full text-[20px] text-white text-right mt-2"
+  >
     <span class="font-light">Desarrollador full-stack</span>
     <span class="font-extrabold">Hugo Alejandro Corona Ruvalcaba</span>
   </div>
