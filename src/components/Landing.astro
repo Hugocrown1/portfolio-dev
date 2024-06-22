@@ -2,7 +2,7 @@
 import Waves from "./Waves.astro";
 import Name from "./Name.astro";
 import { Image } from "astro:assets";
-import MyPhoto from "../assets/yo.jpg";
+import MyPhoto from "../assets/yo-landing.webp";
 import LinkedIn from "./icons/LinkedIn.astro";
 import GitHub from "./icons/GitHub.astro";
 ---
@@ -28,12 +28,12 @@ import GitHub from "./icons/GitHub.astro";
       class="flex flex-row w-full gap-1 items-center justify-center -mt-2 min-[920px]:-mt-10"
     >
       <figure
-        class="w-[70px] min-[920px]:w-[153px] min-[1173px]:w-[193px] rounded-lg min-[920px]:rounded-2xl bg-black overflow-hidden saturate-0 aspect-[193/86]"
+        class="w-[70px] min-[920px]:w-[153px] min-[1173px]:w-[193px] rounded-lg min-[920px]:rounded-2xl bg-black overflow-hidden aspect-[193/86]"
       >
         <Image
           decoding="async"
           loading="lazy"
-          class="object-cover object-center"
+          class="object-cover object-center scale-110"
           src={MyPhoto}
           alt="Foto mia"
         />
